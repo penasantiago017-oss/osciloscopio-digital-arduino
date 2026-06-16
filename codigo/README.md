@@ -3,9 +3,9 @@
 ## Integrantes
 - Said Peña
 - Joel Agudelo
-- Guillermo Sandoval
+- Moises Arrieta
 - Breinerth Altamar
-- Kelvin Garcia
+
 
 ## Descripción del proyecto
 Este proyecto consiste en el diseño e implementación de un osciloscopio digital portátil utilizando un microcontrolador Arduino. El sistema lee señales analógicas de voltaje variables en el tiempo, procesa la información y despliega la onda de forma gráfica en tiempo real a través de una pantalla LCD, permitiendo medir y visualizar frecuencias y amplitudes de componentes electrónicos.
