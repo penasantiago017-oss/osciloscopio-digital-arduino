@@ -107,7 +107,7 @@ Modo Externo (Medición Activa): Realiza la lectura directa de señales analógi
 
 *Evidencias del proyecto*
 
-Fotos
+
 ### Fotos
 
 #### Montaje del circuito en Protoboard
@@ -119,7 +119,7 @@ Fotos
 #### Prototipo Final
 ![Prototipo Final](docs/imagenes/prototipo_final.jpg)
 
-Videos
+
 
 ### Videos
 
