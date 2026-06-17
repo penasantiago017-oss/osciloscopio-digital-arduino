@@ -119,8 +119,6 @@ Modo Externo (Medición Activa): Realiza la lectura directa de señales analógi
 #### Prototipo Final
 ![Prototipo Final](docs/imagenes/prototipo_final.jpg)
 
-
-
 ### Videos
 
 [Ver video de funcionamiento del osciloscopio](docs/videos/prueba_funcionamiento.mp4)
