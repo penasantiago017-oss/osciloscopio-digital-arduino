@@ -108,20 +108,22 @@ Modo Externo (Medición Activa): Realiza la lectura directa de señales analógi
 *Evidencias del proyecto*
 
 
+### Evidencias del proyecto
+
 ### Fotos
 
-#### Montaje del circuito en Protoboard
-![Montaje del circuito](docs/imagenes/montaje_inicial.jpg)
+#### Montaje inicial del circuito en Protoboard
+![Montaje inicial](docs/imagenes/montaje_inicial.jpg)
 
-#### Prueba de señal cuadrada (Onda de 25Hz)
-![Prueba de señal cuadrada](docs/imagenes/prueba_senal_cuadrada.jpg)
+#### Prueba de señal en pantalla OLED
+![Prueba de señal](docs/imagenes/prueba_senal_cuadrada.jpg)
 
-#### Prototipo Final
+#### Prototipo Final Conectado
 ![Prototipo Final](docs/imagenes/prototipo_final.jpg)
 
 ### Videos
 
-[Ver video de funcionamiento del osciloscopio](docs/videos/prueba_funcionamiento.mp4)
+[▶️ Haz clic aquí para ver el video de funcionamiento del osciloscopio](docs/videos/prueba_funcionamiento.mp4)
 
 
 *Esquema de conexiones*
