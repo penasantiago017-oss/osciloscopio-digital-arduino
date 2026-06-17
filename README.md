@@ -105,27 +105,25 @@ Modo de Prueba (Loop Interno): El Arduino genera autónomamente una señal cuadr
 
 Modo Externo (Medición Activa): Realiza la lectura directa de señales analógicas externas provenientes de circuitos ajenos o sensores en el pin A0, respetando el límite estricto de 5V.
 
-*Evidencias del proyecto*
-
-
-### Evidencias del proyecto
-
 ### Evidencias del proyecto
 
 ### Fotos
 
 #### Montaje inicial del circuito en Protoboard
-![Montaje inicial](docs/imagenes/montaje_inicial.jpg.jpeg)
+![Montaje inicial](docs/imagenes/docs/imagenes/montaje_inicial.jpg.jpeg)
 
 #### Prueba de señal en pantalla OLED
-![Prueba de señal](docs/imagenes/prueba_senal_cuadrada.jpg.jpeg)
+![Prueba de señal](docs/imagenes/docs/imagenes/prueba_senal_cuadrada.jpg.jpeg)
 
 #### Prototipo Final Conectado
-![Prototipo Final](docs/imagenes/prototipo_final.jpg.jpeg)
+![Prototipo Final](docs/imagenes/docs/imagenes/prototipo_final.jpg.jpeg)
 
 ### Videos
 
-[▶️ Haz clic aquí para ver el video de funcionamiento del osciloscopio](docs/videos/prueba_funcionamiento.mp4)
+[▶️ Haz clic aquí para ver el video de funcionamiento del osciloscopio](docs/videos/docs/videos/prueba_funcionamiento.mp4)
+
+
+
 
 
 *Esquema de conexiones*
