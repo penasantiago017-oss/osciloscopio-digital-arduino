@@ -10,19 +10,19 @@ Breinerth Altamar
 
 Said Peña
 
-*Descripción del proyecto*
+### Descripción del proyecto
 
 Este proyecto consiste en el diseño e implementación de un osciloscopio digital accesible que permite adquirir, procesar y visualizar señales eléctricas en tiempo real mediante hardware de bajo costo. El sistema recibe una señal analógica, la acondiciona y protege a través de una etapa de seguridad resistiva con diodo Zener, y la digitaliza utilizando el microcontrolador ATmega328P de un Arduino Nano. Finalmente, las ondas y sus parámetros eléctricos (como voltajes máximos, mínimos y promedios) se renderizan de forma dinámica en una pantalla OLED integrada, ofreciendo una alternativa educativa frente a los costosos equipos de laboratorio comerciales.
 
-*Problema identificado*
+### Problema identificado
 
 Los osciloscopios comerciales suelen tener un costo elevado, lo que limita significativamente su acceso en entornos educativos, laboratorios escolares y proyectos de aprendizaje autónomo. Adicionalmente, herramientas de medición comunes como el multímetro únicamente muestran valores instantáneos y estáticos de voltaje, ocultando por completo el comportamiento real, el ruido, la continuidad y la dinámica temporal de una señal eléctrica. La falta de herramientas accesibles de visualización dificulta la comprensión práctica de conceptos fundamentales de la física eléctrica y la electrónica, como la amplitud, la frecuencia y las variaciones de potencial a lo largo del tiempo.
 
-*Objetivo general*
+### Objetivo general
 
 Diseñar e implementar un prototipo de osciloscopio digital de bajo costo basado en Arduino para la adquisición, procesamiento matemático y representación gráfica de señales eléctricas en tiempo real.
 
-*Objetivos específicos*
+### Objetivos específicos
 
 1. Implementar una etapa de acondicionamiento de señal con protección contra sobretensiones para resguardar la integridad del microcontrolador.
 
@@ -34,7 +34,7 @@ Diseñar e implementar un prototipo de osciloscopio digital de bajo costo basado
 
 5. Incorporar un sistema de control de base de tiempo interactivo mediante botones pulsadores con lógica anti-rebote.
 
-*Componentes utilizados*
+### Componentes utilizados
 
 Arduino Nano (ATmega328P)- Cantidad (1) - Controlador principal encargado del muestreo continuo vía ADC de 10 bits y cálculo matemático de parámetros en tiempo real.
 
@@ -69,7 +69,7 @@ El flujo general de procesamiento y conexión del hardware sigue una secuencia l
 <img width="952" height="452" alt="image" src="https://github.com/user-attachments/assets/b2c9d27a-f949-4e24-9072-79f4a48942a4" />
 
 
-*Esquema de Conexión Eléctrica:*
+### Esquema de Conexión Eléctrica:
 
 Entrada de Señal: Conectada al pin analógico A0 del Arduino Nano tras pasar por la red de resistencias (R1, R2), la resistencia pulldown (R3) y el Zener en paralelo (D1).
 
@@ -83,7 +83,7 @@ Botones de Control: Conectados a pines digitales configurados con lecturas estab
 Alimentación: Energizado de forma centralizada mediante el bus USB de 5V del Arduino.
 
 
-*Funcionamiento*
+### Funcionamiento
 
 El comportamiento del osciloscopio digital se ejecuta siguiendo un ciclo de vida de la señal rigurosamente programado:
 
@@ -109,7 +109,7 @@ Modo Externo (Medición Activa): Realiza la lectura directa de señales analógi
 
 https://drive.google.com/drive/folders/1N6QI6fJElJu8Q5Y9KIfcM_G5gqi6CuCz?usp=sharing
 
-*Esquema de conexiones*
+### Esquema de conexiones
 
 
 1. El diagrama de conexiones detalla de forma explícita la distribución de los componentes y la red de acondicionamiento de señal para asegurar la replicabilidad exacta del proyecto.
@@ -122,17 +122,17 @@ https://drive.google.com/drive/folders/1N6QI6fJElJu8Q5Y9KIfcM_G5gqi6CuCz?usp=sha
 
 5. Los pulsadores para modificar la escala temporal enganchados a pines digitales.
 
-*Pruebas realizadas*
+### Pruebas realizadas
 
 <img width="732" height="642" alt="image" src="https://github.com/user-attachments/assets/615d3f36-df67-42fb-a8d1-d46749305e5e" />
 
 
-*Estado actual del proyecto*
+### Estado actual del proyecto
 
 
 El proyecto se encuentra en fase de pruebas finales y validación. El hardware ha sido integrado en su totalidad y el software es capaz de adquirir señales y renderizar líneas vectoriales estables. Se están realizando pequeños ajustes para mitigar el ruido electromagnético proveniente de la alimentación USB no aislada.
 
-*Dificultades encontradas*
+### Dificultades encontradas
 
 
 Frontera del Ancho de Banda: Inicialmente las señales superiores a ciertas frecuencias se distorsionaban severamente debido a la tasa de conversión estándar del ADC de Arduino. Se optimizaron los intervalos de muestreo en el código, delimitando el uso del dispositivo para bajas frecuencias (audio o sensores analógicos lentos).
@@ -141,7 +141,7 @@ Eje Y Invertido en Pantalla: Al trazar las primeras ondas, las señales se rende
 
 Ruido Flotante en la Entrada: Cuando no había ninguna fuente conectada al pin A0, la pantalla dibujaba ondas de ruido caóticas por inducción ambiental. Se solucionó integrando una resistencia pulldown de 100 kΩ en la etapa de entrada, forzando un estado estable de 0V ante la ausencia de señal.
 
-*Mejoras futuras*
+### Mejoras futuras
 
 
 Nivel de Trigger Configurable: Reemplazar el trigger estático por un umbral dinámico ajustable por el usuario para estabilizar señales que poseen amplitudes muy bajas o un offset diferente.
@@ -152,7 +152,7 @@ Telemetría Avanzada: Incorporar la medición automática de frecuencia (Hz) y p
 
 Aislamiento Eléctrico Avanzado: Diseñar una etapa de entrada con mayor rango de voltaje y mejor aislamiento eléctrico para proteger el ordenador ante picos accidentales.
 
-*Conclusiones*
+### Conclusiones
 
 
 Este proyecto demuestra que mediante la aplicación de componentes electrónicos comunes y una lógica algorítmica optimizada es viable replicar las operaciones esenciales de instrumentos científicos complejos y de alto costo. Se validó de manera práctica la integración de técnicas de digitalización analógica, procesamiento estadístico y mapeo espacial sobre pantallas OLED. La construcción del prototipo cumple con los requerimientos técnicos fijados y consolida una plataforma democratizada de hardware abierto, ideal para la experimentación académica.
