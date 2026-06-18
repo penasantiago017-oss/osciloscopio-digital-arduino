@@ -63,7 +63,7 @@ Protoboard y cables - Cantidad (Varios) - Plataforma de hardware para el montaje
 Cable USB - Cantidad (1) - Cable para la alimentación eléctrica del sistema y la programación del microcontrolador.
 
 
-*Arquitectura del sistema*
+### Arquitectura del sistema
 
 El flujo general de procesamiento y conexión del hardware sigue una secuencia lineal estructurada en tres etapas principales:
 <img width="952" height="452" alt="image" src="https://github.com/user-attachments/assets/b2c9d27a-f949-4e24-9072-79f4a48942a4" />
