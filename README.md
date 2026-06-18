@@ -109,6 +109,108 @@ Modo Externo (Medición Activa): Realiza la lectura directa de señales analógi
 
 https://drive.google.com/drive/folders/1N6QI6fJElJu8Q5Y9KIfcM_G5gqi6CuCz?usp=sharing
 
+### Codigo para ponerlo en funcionamiento
+
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define OLED_RESET -1
+
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+const byte PIN_SIGNAL = A0;
+const byte PIN_TEST = 9;
+const bool TEST_SIGNAL = true;
+const unsigned int SAMPLE_DELAY_US = 80;
+
+int samples[SCREEN_WIDTH];
+
+const int GRAPH_TOP = 12;
+const int GRAPH_BOTTOM = 63;
+
+int yFromADC(int v) {
+  return map(v, 0, 1023, GRAPH_BOTTOM, GRAPH_TOP);
+}
+
+void waitTrigger() {
+  const int triggerLevel = 512;
+  unsigned long start = millis();
+  int prev = analogRead(PIN_SIGNAL);
+
+  while (millis() - start < 60) {
+    int now = analogRead(PIN_SIGNAL);
+    if (prev < triggerLevel && now >= triggerLevel) {
+      return;
+    }
+    prev = now;
+  }
+}
+
+void setup() {
+  pinMode(PIN_SIGNAL, INPUT);
+
+  if (TEST_SIGNAL) {
+    tone(PIN_TEST, 100);
+  }
+
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    while (true);
+  }
+
+  display.clearDisplay();
+  display.setTextColor(SSD1306_WHITE);
+  display.setTextSize(1);
+  display.setCursor(0, 0);
+  display.println("Mini osciloscopio");
+  display.println("Arduino + OLED");
+  display.display();
+
+  delay(1000);
+}
+
+void loop() {
+  waitTrigger();
+
+  int minV = 1023;
+  int maxV = 0;
+
+  for (int i = 0; i < SCREEN_WIDTH; i++) {
+    int v = analogRead(PIN_SIGNAL);
+    samples[i] = v;
+    if (v < minV) minV = v;
+    if (v > maxV) maxV = v;
+    delayMicroseconds(SAMPLE_DELAY_US);
+  }
+
+  float vpp = (maxV - minV) * (5.0 / 1023.0);
+  float vmin = minV * (5.0 / 1023.0);
+  float vmax = maxV * (5.0 / 1023.0);
+
+  display.clearDisplay();
+
+  display.setCursor(0, 0);
+  display.print("Vpp:");
+  display.print(vpp, 2);
+  display.print(" ");
+  display.print(vmin, 1);
+  display.print("-");
+  display.print(vmax, 1);
+  display.print("V");
+
+  display.drawLine(0, yFromADC(512), 127, yFromADC(512), SSD1306_WHITE);
+
+  for (int x = 1; x < SCREEN_WIDTH; x++) {
+    int y1 = yFromADC(samples[x - 1]);
+    int y2 = yFromADC(samples[x]);
+    display.drawLine(x - 1, y1, x, y2, SSD1306_WHITE);
+  }
+
+  display.display();
+}
+
 ### Esquema de conexiones
 
 
